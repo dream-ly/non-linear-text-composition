@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.transcript {
+    background-color: bisque;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.mindMap {
+    position: relative;
+    background-color: blue;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.summary {
+    background-color: #e627cc;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#record{
+    position: absolute;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 0px;
+    left:0px;
+    margin: 5px;
+}
+
+#newNode{
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    top: 0px;
+    right:0px;
+    margin: 5px;
+}
+
+#map{
+
+}
+
+#trashCan{
+    position: absolute;
+    /* background-color: white; */
+    background-image: url(/image/trashcan.png);
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    bottom: 0px;
+    right: 0px;
+    margin: 5px;
+}

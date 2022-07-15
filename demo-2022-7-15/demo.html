@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+
+    <script> //接口-拖动组件
+        function drag(ev)
+        {
+            ev.dataTransfer.setData("Node",ev.target.id);
+        }
+
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+
+        function drop(ev){
+            ev.preventDefault();
+            var id=ev.dataTransfer.getData("Node");
+            var folder=document.getElementById(id);
+            document.getElementById('mindMap').removeChild(folder);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class = "grid-container">
+        <textarea class="transcript" id="transcript" rows="10" cols="30"></textarea>
+        <div class="mindMap" id="mindMap">
+            <div id="record"></div>
+            <div id="newNode" draggable="true" ondragstart="drag(event)">New node</div>
+            <div id="map"></div>
+            <div id="trashCan" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        </div>
+        <textarea class="summary" id="summary" rows="10" cols="30"></textarea>
+    </div>
+
+</body>
+</html>
